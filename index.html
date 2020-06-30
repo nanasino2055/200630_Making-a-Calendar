@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>webサイト制作テンプレート</title>
+  </head>
+  <body>
+    <div class="cleander">
+      <p id="monthName"></p>
+      <p id="dayName"></p>
+      <p id="dayNumber"></p>
+      <p id="year"></p>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const lang = navigator.language;
+    let date = new Date();
+
+    let dayNumber = date.getDate();
+    let month = date.getMonth();
+    let dayName = date.toLocaleString(lang,{weekday: 'long'});
+    let monthName = date.toLocaleString(lang,{month: 'long'});
+    let year = date.getFullYear();
+
+    document.getElementById('monthName').innerHTML= monthName;
+    document.getElementById('dayName').innerHTML= dayName;
+    document.getElementById('dayNumber').innerHTML= dayNumber;
+    document.getElementById('year').innerHTML= year;
+  </script>
+</html>
+
+<!--
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ -->
